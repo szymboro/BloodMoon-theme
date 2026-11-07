@@ -5,7 +5,7 @@ It covers the desktop, the icons, VS Code, LibreWolf, Spotify and Steam, so ever
 
 ![Blood Moon desktop](screenshots/desktop.jpg)
 
-<sub>Wallpaper not included. It belongs to its artist.</sub>
+<sub>Wallpaper by <a href="https://www.artstation.com/artwork/0XAwP5">Anato Finnstark</a>, not included in this repo. Support him on <a href="https://www.patreon.com/anatofinnstark">Patreon</a>.</sub>
 
 | Spotify | Steam |
 |---|---|
