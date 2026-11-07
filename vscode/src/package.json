@@ -1,0 +1,14 @@
+{
+  "name": "bloodmoon-theme",
+  "displayName": "Blood Moon",
+  "description": "Dark theme matching the Blood Moon KDE color scheme",
+  "version": "1.0.0",
+  "publisher": "local",
+  "engines": { "vscode": "^1.60.0" },
+  "categories": ["Themes"],
+  "contributes": {
+    "themes": [
+      { "label": "Blood Moon", "uiTheme": "vs-dark", "path": "./themes/bloodmoon-color-theme.json" }
+    ]
+  }
+}

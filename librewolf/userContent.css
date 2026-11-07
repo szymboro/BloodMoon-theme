@@ -1,0 +1,21 @@
+/* Blood Moon colors for LibreWolf's own pages (new tab, settings, add-ons) */
+@-moz-document url-prefix("about:") {
+  :root {
+    --in-content-page-background: #110e0f !important;
+    --in-content-page-color: #d8cbb0 !important;
+    --in-content-box-background: #1d1819 !important;
+    --in-content-box-border-color: #2e2526 !important;
+    --in-content-primary-button-background: #821a1a !important;
+    --in-content-primary-button-background-hover: #a02222 !important;
+    --in-content-primary-button-text-color: #f5ebd7 !important;
+    --in-content-accent-color: #b02a2a !important;
+    --in-content-link-color: #c9a45c !important;
+    --in-content-focus-outline-color: #b02a2a !important;
+    --newtab-background-color: #110e0f !important;
+    --newtab-background-color-secondary: #1d1819 !important;
+    --newtab-text-primary-color: #d8cbb0 !important;
+    --color-accent-primary: #b02a2a !important;
+    --background-color-canvas: #110e0f !important;
+    --text-color: #d8cbb0 !important;
+  }
+}

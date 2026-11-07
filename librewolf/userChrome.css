@@ -1,0 +1,206 @@
+/* Blood Moon theme for LibreWolf - matches the KDE BloodMoon color scheme */
+
+:root {
+  --bm-bg-deep: #0c0a0b;
+  --bm-bg: #110e0f;
+  --bm-bg-bar: #141011;
+  --bm-bg-raised: #1d1819;
+  --bm-bg-hover: #2a2122;
+  --bm-border: #2e2526;
+  --bm-red: #b02a2a;
+  --bm-red-sel: #821a1a;
+  --bm-gold: #c9a45c;
+  --bm-gold-light: #f0d6a0;
+  --bm-fg: #d8cbb0;
+  --bm-fg-dim: #8a7f6c;
+
+  /* Firefox theme variables */
+  --toolbox-bgcolor: var(--bm-bg-deep) !important;
+  --toolbox-bgcolor-inactive: var(--bm-bg-deep) !important;
+  --toolbox-textcolor: var(--bm-fg) !important;
+  --toolbox-textcolor-inactive: var(--bm-fg-dim) !important;
+  --toolbar-bgcolor: var(--bm-bg-bar) !important;
+  --toolbar-color: var(--bm-fg) !important;
+  --toolbar-field-background-color: var(--bm-bg-deep) !important;
+  --toolbar-field-color: var(--bm-fg) !important;
+  --toolbar-field-focus-background-color: var(--bm-bg) !important;
+  --toolbar-field-focus-color: var(--bm-fg) !important;
+  --toolbar-field-border-color: var(--bm-border) !important;
+  --toolbar-field-focus-border-color: var(--bm-red) !important;
+  --toolbarbutton-hover-background: var(--bm-bg-hover) !important;
+  --toolbarbutton-active-background: var(--bm-red-sel) !important;
+  --toolbarbutton-icon-fill: var(--bm-gold) !important;
+  --toolbarbutton-icon-fill-attention: var(--bm-red) !important;
+  --tab-selected-bgcolor: var(--bm-bg-bar) !important;
+  --tab-selected-textcolor: var(--bm-gold-light) !important;
+  --tab-hover-background-color: var(--bm-bg-raised) !important;
+  --tab-loading-fill: var(--bm-red) !important;
+  --lwt-tab-line-color: var(--bm-red) !important;
+  --focus-outline-color: var(--bm-red) !important;
+  --urlbarView-highlight-background: var(--bm-red-sel) !important;
+  --urlbarView-highlight-color: #f5ebd7 !important;
+  --urlbarView-separator-color: var(--bm-border) !important;
+  --arrowpanel-background: var(--bm-bg-bar) !important;
+  --arrowpanel-color: var(--bm-fg) !important;
+  --arrowpanel-border-color: var(--bm-border) !important;
+  --panel-separator-color: var(--bm-border) !important;
+  --button-hover-bgcolor: var(--bm-bg-hover) !important;
+  --button-primary-bgcolor: var(--bm-red-sel) !important;
+  --button-primary-hover-bgcolor: #a02222 !important;
+  --button-primary-color: #f5ebd7 !important;
+  --sidebar-background-color: var(--bm-bg-bar) !important;
+  --sidebar-text-color: var(--bm-fg) !important;
+  --chrome-content-separator-color: var(--bm-bg-deep) !important;
+
+  /* Square everything in the browser UI */
+  --tab-border-radius: 0 !important;
+  --toolbarbutton-border-radius: 0 !important;
+  --toolbarbutton-outer-padding: 2px !important;
+  --arrowpanel-border-radius: 0 !important;
+  --border-radius-small: 0 !important;
+  --border-radius-medium: 0 !important;
+  --border-radius-large: 0 !important;
+  --tab-block-margin: 0 !important;
+  --tab-min-height: 34px !important;
+}
+
+/* ---- Tabs: square, flush with the tab bar, red line on the active tab ---- */
+#TabsToolbar,
+#titlebar {
+  background-color: var(--bm-bg-deep) !important;
+}
+
+.tabbrowser-tab {
+  padding-inline: 0 !important;
+}
+
+.tab-background {
+  border-radius: 0 !important;
+  margin-block: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  border: none !important;
+}
+
+.tabbrowser-tab:not([selected], [multiselected]) .tab-background {
+  background: transparent !important;
+}
+
+.tabbrowser-tab:hover:not([selected]) .tab-background {
+  background-color: var(--bm-bg-raised) !important;
+}
+
+.tab-background:is([selected], [multiselected]) {
+  background: var(--bm-bg-bar) !important;
+  border-top: 2px solid var(--bm-red) !important;
+}
+
+.tabbrowser-tab:not([selected]) .tab-label {
+  color: var(--bm-fg-dim) !important;
+}
+
+/* thin divider between inactive tabs */
+.tabbrowser-tab:not([selected], :hover) + .tabbrowser-tab:not([selected], :hover) {
+  border-inline-start: 1px solid var(--bm-bg-raised) !important;
+}
+
+.tab-close-button,
+.tab-icon-overlay {
+  border-radius: 0 !important;
+}
+
+/* ---- Toolbars and URL bar ---- */
+#nav-bar,
+#PersonalToolbar {
+  background-color: var(--bm-bg-bar) !important;
+  border-top: none !important;
+  box-shadow: none !important;
+}
+
+#urlbar-background,
+#searchbar,
+#urlbar,
+.urlbar-input-container,
+#urlbar .urlbarView-row,
+toolbarbutton,
+.toolbarbutton-1 > .toolbarbutton-icon,
+.toolbarbutton-1 > .toolbarbutton-badge-stack,
+.toolbarbutton-1 > .toolbarbutton-text,
+#identity-box *,
+#tracking-protection-icon-container,
+.urlbar-page-action,
+menupopup,
+panel {
+  border-radius: 0 !important;
+}
+
+/* URL bar + search bar: square (LibreWolf 159 uses these variables/classes) */
+.urlbar,
+#urlbar,
+#searchbar {
+  --urlbar-border-radius: 0px !important;
+  --urlbarview-border-radius: 0px !important;
+  --urlbar-background-border-radius: 0px !important;
+  --urlbar-background-border-top-radius-open: 0px !important;
+  --urlbar-inner-border-radius: 0px !important;
+  --urlbar-icon-border-radius: 0px !important;
+  --button-border-radius: 0px !important;
+  --popup-border-radius: 0px !important;
+
+  /* One thin red border when focused, instead of border + outline stacked */
+  --urlbar-background-border: 1px solid var(--bm-border) !important;
+  --urlbar-background-border-focused: 1px solid var(--bm-red) !important;
+  --urlbar-background-border-open: 1px solid var(--bm-red) !important;
+  --urlbar-background-outline-focused: none !important;
+  --urlbar-input-container-outline-open: none !important;
+  --urlbar-input-container-outline-open-focused: none !important;
+  --urlbar-background-box-shadow-open: none !important;
+}
+
+.urlbar-background,
+.urlbar-input-container,
+#searchbar,
+#searchbar:focus-within {
+  outline: none !important;
+}
+
+.urlbar,
+.urlbar *,
+#urlbar,
+#urlbar *,
+#searchbar,
+#searchbar *,
+.urlbarView,
+.urlbarView *,
+#urlbar-background,
+.urlbar-background,
+.urlbar-input-container {
+  border-radius: 0 !important;
+}
+
+#searchbar:focus-within {
+  box-shadow: inset 0 0 0 1px var(--bm-red) !important;
+}
+
+/* ---- Menus and panels ---- */
+menupopup,
+panel {
+  --panel-background: var(--bm-bg-bar) !important;
+  --panel-color: var(--bm-fg) !important;
+  --panel-border-color: var(--bm-border) !important;
+  --panel-border-radius: 0 !important;
+}
+
+menu:where([_moz-menuactive]:not([disabled="true"])),
+menuitem:where([_moz-menuactive]:not([disabled="true"])) {
+  background-color: var(--bm-red-sel) !important;
+  color: #f5ebd7 !important;
+}
+
+/* Sidebar */
+#sidebar-box,
+#sidebar-header,
+#sidebar-main {
+  background-color: var(--bm-bg-bar) !important;
+  color: var(--bm-fg) !important;
+}

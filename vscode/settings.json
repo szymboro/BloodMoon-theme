@@ -1,0 +1,39 @@
+{
+  // Look
+  "workbench.colorTheme": "Blood Moon",
+  "editor.fontFamily": "'JetBrains Mono', 'Hack', monospace",
+  "editor.fontSize": 14,
+  "editor.fontLigatures": true,
+  "terminal.integrated.fontFamily": "'JetBrains Mono', monospace",
+  "editor.minimap.enabled": false,
+  "editor.cursorBlinking": "smooth",
+  "editor.smoothScrolling": true,
+  "editor.bracketPairColorization.enabled": true,
+  "window.titleBarStyle": "custom",
+
+  // No telemetry, experiments, or online lookups
+  "telemetry.telemetryLevel": "off",
+  "workbench.enableExperiments": false,
+  "workbench.settings.enableNaturalLanguageSearch": false,
+  "workbench.cloudChanges.autoResume": "off",
+  "workbench.cloudChanges.continueOn": "off",
+
+  // No AI / Copilot / chat
+  "chat.disableAIFeatures": true,
+  "chat.commandCenter.enabled": false,
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+
+  // No welcome page, tips, walkthroughs, recommendations, release notes
+  "workbench.startupEditor": "none",
+  "workbench.welcomePage.walkthroughs.openOnInstall": false,
+  "workbench.tips.enabled": false,
+  "extensions.ignoreRecommendations": true,
+  "update.showReleaseNotes": false,
+
+  // Less UI clutter
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "workbench.editor.empty.hint": "hidden",
+  "git.openRepositoryInParentFolders": "never",
+  "git.autofetch": false
+}
