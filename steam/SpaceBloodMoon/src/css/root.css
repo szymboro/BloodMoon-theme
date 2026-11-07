@@ -1,0 +1,21 @@
+/* Blood Moon palette (recolor of SpaceTheme). Values are "R, G, B". */
+:root {
+    --st-accent-1: 176, 42, 42;      /* blood red */
+    --st-accent-2: 201, 164, 92;     /* gold (hover) */
+    --bm-accent-text: 226, 92, 80;   /* readable red for text */
+    --st-color-1: 17, 14, 15;
+    --st-color-2: 30, 24, 25;
+    --st-color-3: 20, 16, 17;
+    --st-color-4: 24, 19, 20;
+    --st-color-5: 46, 37, 38;
+    --st-color-6: 42, 33, 34;
+    --st-background: 12, 10, 11;
+    --st-red: 192, 57, 43;
+    --st-red-hover: 214, 72, 56;
+    --st-green: 154, 122, 63;        /* play / success -> dark gold */
+    --st-green-hover: 201, 164, 92;
+    --st-blue: 176, 42, 42;          /* info / links -> red */
+    --st-blue-hover: 200, 60, 60;
+    --st-yellow: 201, 164, 92;
+    --st-yellow-hover: 240, 214, 160;
+}

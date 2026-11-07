@@ -1,0 +1,67 @@
+/* Blood Moon for Spotify (Spicetify) v2
+   Colors come from color.ini; this file only adds fonts, square corners and accents.
+   Rule: never add borders/margins/gaps to layout containers (breaks Spotify's grid). */
+:root {
+  --bm-deep:#0c0a0b; --bm-bg:#110e0f; --bm-bar:#141011; --bm-raised:#1d1819;
+  --bm-hover:#2a2122; --bm-border:#2e2526; --bm-red:#b02a2a; --bm-red-sel:#821a1a;
+  --bm-gold:#c9a45c; --bm-gold-light:#f0d6a0; --bm-fg:#d8cbb0; --bm-dim:#8a7f6c;
+  --bm-title:"Cinzel", serif;
+}
+
+/* Square corners (visual only) */
+*, *::before, *::after { border-radius: 0 !important; }
+
+/* Thin separators drawn inside panels, so the layout size is untouched */
+.Root__nav-bar, .Root__right-sidebar aside, .Root__main-view {
+  box-shadow: inset 0 0 0 1px var(--bm-border) !important;
+}
+.Root__now-playing-bar { box-shadow: inset 0 2px 0 var(--bm-red) !important; }
+
+/* Flatten Spotify's colored header gradients */
+.main-entityHeader-backgroundColor, .main-entityHeader-overlay,
+.main-actionBarBackground-background, .main-home-homeHeader {
+  background: var(--bm-bar) !important;
+  background-image: none !important;
+}
+
+/* Big titles: Cinzel, gold */
+.main-entityHeader-title h1, .main-entityHeader-title span,
+.main-shelf-title, .main-shelf-title a, section[data-testid="home-page"] h2,
+h1.encore-text-headline-large, h2.encore-text-title-medium, h2.encore-text-headline-medium {
+  font-family: var(--bm-title) !important;
+  font-weight: 700 !important;
+  color: var(--bm-gold-light) !important;
+  letter-spacing: .02em;
+}
+.main-entityHeader-title h1 { text-shadow: 0 0 18px rgba(176,42,42,.4); }
+
+/* Now playing title */
+.main-nowPlayingWidget-trackInfo [data-testid="context-item-info-title"],
+.main-trackInfo-name {
+  font-family: var(--bm-title) !important;
+  font-weight: 700 !important;
+}
+
+/* Card hover: red outline (outline doesn't affect layout) */
+.main-card-card:hover { outline: 1px solid var(--bm-red); outline-offset: -1px; }
+
+/* Selected track row */
+.main-trackList-trackListRow[aria-selected="true"] { background: var(--bm-red-sel) !important; }
+
+/* Active item in Your Library */
+.main-yourLibraryX-listItem [aria-current="page"] { box-shadow: inset 2px 0 0 var(--bm-red); }
+
+/* Progress / volume bars */
+.progress-bar { --fg-color: var(--bm-red) !important; --bg-color: var(--bm-border) !important; }
+.progress-bar:hover { --fg-color: var(--bm-gold) !important; }
+
+/* Search field focus */
+input:focus { outline: 1px solid var(--bm-red) !important; }
+
+/* Context menus */
+#context-menu ul, .main-contextMenu-menu { box-shadow: inset 0 0 0 1px var(--bm-border), 0 6px 18px rgba(0,0,0,.6) !important; }
+
+/* Scrollbars + text selection */
+::-webkit-scrollbar-thumb { background: var(--bm-border) !important; }
+::-webkit-scrollbar-thumb:hover { background: var(--bm-red-sel) !important; }
+::selection { background: var(--bm-red-sel); color: #f5ebd7; }

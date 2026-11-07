@@ -4,7 +4,7 @@
 #   ./install.sh                 install and apply everything
 #   ./install.sh kde librewolf   only the parts you name
 #
-# Parts: kde, icons, fonts, vscode, librewolf
+# Parts: kde, icons, fonts, vscode, librewolf, spotify, steam
 # Add --vscode-settings to also copy the de-bloated VS Code settings.json
 # (your existing one is backed up first).
 
@@ -18,12 +18,12 @@ vscode_settings=0
 for a in "$@"; do
   case "$a" in
     --vscode-settings) vscode_settings=1 ;;
-    kde|icons|fonts|vscode|librewolf) parts+=("$a") ;;
+    kde|icons|fonts|vscode|librewolf|spotify|steam) parts+=("$a") ;;
     -h|--help) sed -n '2,10p' "$0"; exit 0 ;;
     *) echo "Unknown option: $a" >&2; exit 1 ;;
   esac
 done
-[ ${#parts[@]} -eq 0 ] && parts=(fonts icons kde vscode librewolf)
+[ ${#parts[@]} -eq 0 ] && parts=(fonts icons kde vscode librewolf spotify steam)
 want() { [[ " ${parts[*]} " == *" $1 "* ]]; }
 
 say()  { printf '\e[38;2;201;164;92m==>\e[0m %s\n' "$*"; }
@@ -147,6 +147,53 @@ if want librewolf; then
       esac
     done < "$HERE/librewolf/user.js"
     pgrep -x librewolf >/dev/null && warn "Restart LibreWolf to see the theme"
+  fi
+fi
+
+# ---------------------------------------------------------------- Spotify (Spicetify)
+if want spotify; then
+  spice="$(command -v spicetify || true)"
+  [ -z "$spice" ] && [ -x "$HOME/.spicetify/spicetify" ] && spice="$HOME/.spicetify/spicetify"
+  if [ -z "$spice" ]; then
+    warn "Spicetify not found - skipping Spotify. Install it from https://spicetify.app, then re-run:  $0 spotify"
+  else
+    say "Spotify: Blood Moon Spicetify theme"
+    themes="${XDG_CONFIG_HOME:-$HOME/.config}/spicetify/Themes/BloodMoon"
+    mkdir -p "$themes"
+    cp "$HERE/spotify/color.ini" "$HERE/spotify/user.css" "$themes/"
+    flat=/var/lib/flatpak/app/com.spotify.Client/x86_64/stable/active/files/extra/share/spotify
+    [ -d "$flat" ] || flat="$HOME/.local/share/flatpak/app/com.spotify.Client/x86_64/stable/active/files/extra/share/spotify"
+    if [ -d "$flat" ]; then
+      "$spice" config spotify_path "$flat" prefs_path "$HOME/.var/app/com.spotify.Client/config/spotify/prefs" >/dev/null
+      [ -w "$flat" ] || warn "Spotify Flatpak files aren't writable yet - see spotify/README.md for the chmod commands"
+    fi
+    "$spice" config current_theme BloodMoon color_scheme Base inject_css 1 replace_colors 1 >/dev/null
+    if "$spice" backup apply >/dev/null 2>&1 || "$spice" apply >/dev/null 2>&1; then
+      echo "    applied - restart Spotify if it's open"
+    else
+      warn "spicetify apply failed - open Spotify once, close it, then run:  spicetify backup apply"
+    fi
+  fi
+fi
+
+# ---------------------------------------------------------------- Steam (Millennium)
+if want steam; then
+  steamdir=""
+  for d in "$HOME/.steam/steam" "$DATA/Steam"; do [ -d "$d" ] && steamdir="$d" && break; done
+  if [ -z "$steamdir" ]; then
+    warn "Steam not found - skipping"
+  elif [ ! -d /usr/lib/millennium ] && [ ! -d "$steamdir/millennium" ]; then
+    warn "Millennium not found - skipping Steam. Install it from https://steambrew.app, then re-run:  $0 steam"
+  else
+    say "Steam: Blood Moon (recolor of SpaceTheme by SpaceEnergy)"
+    dest="$steamdir/millennium/themes/SpaceBloodMoon"
+    mkdir -p "$steamdir/millennium/themes"
+    rm -rf "$dest"
+    cp -r "$HERE/steam/SpaceBloodMoon" "$dest"
+    echo "    pick it in Steam -> Settings -> Millennium -> Themes -> Blood Moon (SpaceTheme)"
+    if [ -f /etc/fedora-release ] && ! ls /usr/lib/libcrypto.so.3 >/dev/null 2>&1; then
+      warn "This Fedora has no OpenSSL 3; Millennium needs:  sudo dnf install openssl3-libs.i686"
+    fi
   fi
 fi
 

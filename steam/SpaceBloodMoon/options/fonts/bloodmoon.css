@@ -1,0 +1,21 @@
+/* Blood Moon: readable body font, Cinzel for titles */
+* { font-family: 'Noto Sans', 'Be Vietnam Pro', sans-serif !important; }
+
+h1, h2, .DialogHeader, .DialogTitle, .PagedSettingsDialog_Title,
+._19axKcqYRuaJ8vdYKYmtTQ,          /* STORE / LIBRARY / COMMUNITY */
+._2UyOBeiSdBayaFdRa39N2O,          /* Steam / View / Friends menu */
+._2mZ8LlvoUiyeEUtIWuTri,           /* collection names in game list */
+._3O48LaKWcabKx07xdrt1TH,          /* Home */
+._1QOqxv1IVU4TSd_6unnCY0, ._1p4KV0LZCs0tnDlcOahdCN,  /* library home headers */
+._2hfibYuzyMOQ0sj2egsHh0,          /* What's New */
+._1YdRdM9TZ_3Xolwv9aVEv-, ._1YdRdM9TZ_3Xolwv9aVEv- .DialogDropDown_CurrentDisplay, /* shelf titles */
+._3hW5F3JQJmt0L67hcy_U1V,          /* game page collections header */
+._1FnJ6dPuknQFQ2RTpKTI16 button    /* Play / Install */ {
+  font-family: 'Cinzel', serif !important;
+  font-weight: 700 !important;
+  letter-spacing: .04em;
+}
+._19axKcqYRuaJ8vdYKYmtTQ, ._2mZ8LlvoUiyeEUtIWuTri, ._3O48LaKWcabKx07xdrt1TH,
+._2hfibYuzyMOQ0sj2egsHh0, ._1QOqxv1IVU4TSd_6unnCY0, h1, h2, .DialogHeader {
+  color: rgb(240, 214, 160) !important;
+}
