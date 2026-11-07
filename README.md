@@ -15,7 +15,7 @@ It covers the desktop, the icons, VS Code, LibreWolf, Spotify and Steam, so ever
 | **Icons** | **Hunter**: Papirus recolored to ash and bone with blood-red accents, plus a custom bell volume icon. **Papirus-Dark-Blood**: Papirus Dark with carmine folders |
 | **Window titles** | Cinzel font (SIL Open Font License) |
 | **Start menu** | Hunter's Mark rune as the launcher icon |
-| **VS Code** | Blood Moon color theme, plus optional settings that turn off telemetry, Copilot/AI chat, the welcome page and tips |
+| **VS Code** | Blood Moon color theme, plus optional settings that use the KDE title bar (Cinzel title, matching other windows) and turn off telemetry, Copilot/AI chat, the welcome page and tips |
 | **Spotify** | Spicetify theme: Blood Moon colors, Cinzel titles, square corners, red progress bars. See [`spotify/`](spotify/) |
 | **Steam** | Millennium theme: a Blood Moon recolor of [SpaceTheme for Steam](https://github.com/SpaceTheme/Steam) by SpaceEnergy. See [`steam/`](steam/) |
 | **LibreWolf / Firefox** | `userChrome.css`: square tabs, square URL bar, Blood Moon colors. `userContent.css`: themed new tab and settings pages |

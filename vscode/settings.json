@@ -9,7 +9,9 @@
   "editor.cursorBlinking": "smooth",
   "editor.smoothScrolling": true,
   "editor.bracketPairColorization.enabled": true,
-  "window.titleBarStyle": "custom",
+  // KDE draws the title bar, so it uses the Cinzel title font like other windows (Alt shows the menu)
+  "window.titleBarStyle": "native",
+  "window.menuBarVisibility": "toggle",
 
   // No telemetry, experiments, or online lookups
   "telemetry.telemetryLevel": "off",
