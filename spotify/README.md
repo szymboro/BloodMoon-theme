@@ -3,6 +3,8 @@
 A [Spicetify](https://spicetify.app) theme: Blood Moon colors, Cinzel titles, square corners,
 red progress bars and a red line above the player.
 
+![Blood Moon Spotify theme](../screenshots/spotify.jpg)
+
 Install Spicetify first, then run `./install.sh spotify` from the repo root.
 
 For the **Flatpak** version of Spotify, Spicetify needs write access to Spotify's files once:

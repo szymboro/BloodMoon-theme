@@ -65,3 +65,19 @@ input:focus { outline: 1px solid var(--bm-red) !important; }
 ::-webkit-scrollbar-thumb { background: var(--bm-border) !important; }
 ::-webkit-scrollbar-thumb:hover { background: var(--bm-red-sel) !important; }
 ::selection { background: var(--bm-red-sel); color: #f5ebd7; }
+
+/* Album/playlist pages: Spotify tints headers with a color taken from the cover art */
+[style*="--background-base"] {
+  --background-base: #141011 !important;
+  --background-base-min-contrast: #141011 !important;
+}
+.main-actionBarBackground-background,
+.playlist-playlist-actionBarBackground-background {
+  background: linear-gradient(#141011, #110e0f) !important;
+}
+
+/* "Now playing" bars in track lists: red instead of green */
+.main-trackList-playingIcon, .main-trackList-active .main-trackList-rowMarker svg,
+img[src*="equaliser"], .main-trackList-rowMarker img { filter: hue-rotate(-120deg) saturate(1.4); }
+.main-trackList-active .main-trackList-rowTitle,
+.main-trackList-active .main-trackList-number { color: #e25c50 !important; }

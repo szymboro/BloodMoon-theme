@@ -7,6 +7,10 @@ It covers the desktop, the icons, VS Code, LibreWolf, Spotify and Steam, so ever
 
 <sub>Wallpaper not included. It belongs to its artist.</sub>
 
+| Spotify | Steam |
+|---|---|
+| ![Blood Moon Spotify theme](screenshots/spotify.jpg) | ![Blood Moon Steam theme](screenshots/steam.jpg) |
+
 ## What's inside
 
 | Part | What you get |

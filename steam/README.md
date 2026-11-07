@@ -6,6 +6,8 @@
 > If you like it, support the original: [Ko-fi](https://ko-fi.com/spacetheme) ·
 > [SpaceTheme on GitHub](https://github.com/SpaceTheme/Steam).
 
+![Blood Moon Steam theme](../screenshots/steam.jpg)
+
 Requires [Millennium](https://steambrew.app). Install it, then run `./install.sh steam` from the
 repo root, restart Steam and pick **Blood Moon (SpaceTheme)** under
 Steam → Settings → Millennium → Themes.
